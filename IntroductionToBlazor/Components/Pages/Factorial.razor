@@ -1,0 +1,19 @@
+﻿@page "/factorial"
+@rendermode InteractiveServer
+
+<h3>Factorial</h3>
+
+<input type="number" name="factorial" min="0" max="20" @bind="n" @onclick="Calculate"/> <label for="factorial" style="font-size: 24px;">! = @factorial</label>
+
+@code {
+	int n = 0;
+	long factorial = 1;
+	void Calculate()
+	{
+		factorial = 1;
+		for (int i = 1; i <= n; i++)
+		{
+			factorial *= i;
+		}
+	}
+}
