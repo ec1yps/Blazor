@@ -10,14 +10,14 @@
 
 <input type="text" placeholder="Новая задача" @bind="task" />
 <button @onclick="AddTask">Добавить</button>
-
+<span class="complete-task">Complete task</span>
 <ul>
 	@foreach (TODOitem i in tasks)
 	{
-			<li>
-				<input type="checkbox" @bind="i.DONE" />
-				@i.Title
-			</li>	
+		<li>
+			<input type="checkbox" @bind="i.DONE" /> 
+			<div class=@(i.DONE ? "complete-task" : "")>@i.Title</div>
+		</li>	
 	}
 </ul>
 
