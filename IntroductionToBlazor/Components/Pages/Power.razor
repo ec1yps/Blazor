@@ -17,7 +17,6 @@
 	{
 		power = basis;
 		if (indicator == 0) power = 1;
-		// if (indicator < 0)
 		else
 		{
 			for (int i = 1; i < Math.Abs(indicator); i++)
@@ -26,10 +25,5 @@
 			}
 			if (indicator < 0) power = 1 / power;
 		}
-		// if (indicator == 0) power = 0;
-		// if (indicator > 0)
-		// {
-		// 	power = basis
-		// }
 	}
 }
