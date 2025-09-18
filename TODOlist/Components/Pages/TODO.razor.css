@@ -1,5 +1,30 @@
-﻿ul {
+﻿h4 {
+	text-align: center;
+}
+
+ul {
 	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.Tasks {
+	display: flex;
+	justify-content: space-between;
+	gap: 20px;
+	width: 100%;
+}
+
+.TODO, .DONE {
+	flex: 1;
+	min-width: 0;
+	border: 2px solid black;
+	margin: 10px;
+}
+
+li {
+	padding-left: 20px;
+	padding-bottom: 10px;
 }
 
 .complete-task {
