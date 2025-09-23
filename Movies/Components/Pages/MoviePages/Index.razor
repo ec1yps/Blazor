@@ -1,4 +1,5 @@
 ﻿@page "/movies"
+@rendermode InteractiveServer
 @using Microsoft.EntityFrameworkCore
 @using Microsoft.AspNetCore.Components.QuickGrid
 @using Movies.Models
@@ -10,11 +11,27 @@
 
 <h1>Index</h1>
 
+<div style="display:flex; justify-content:space-between">
+    <form action="/movies" data-enhance data-permanent>
+        <input type="search" name="titleFilter" />
+        <input type="submit" name="Search" />
+    </form>
+
+    <div>
+        <label for="movies-per-page">Movies per page:</label>
+        <select id="movies-per-pages" @bind="pagination.ItemsPerPage">
+            <option value="3">3</option>
+            <option value="5">5</option>
+            <option value="8">8</option>
+        </select>
+    </div>
+</div>
+
 <p>
     <a href="movies/create">Create New</a>
 </p>
 
-<QuickGrid Class="table" Items="context.Movie">
+<QuickGrid Class="table" Items="FilteredMovies" Pagination="pagination">
     <PropertyColumn Property="movie => movie.Title" />
     <PropertyColumn Property="movie => movie.ReleaseDate" />
     <PropertyColumn Property="movie => movie.Genre" />
@@ -25,10 +42,17 @@
         <a href="@($"movies/details?id={movie.Id}")">Details</a> |
         <a href="@($"movies/delete?id={movie.Id}")">Delete</a>
     </TemplateColumn>
+    <Paginator State="pagination" />
 </QuickGrid>
 
 @code {
     private MoviesContext context = default!;
+    [SupplyParameterFromQuery]
+    private string? TitleFilter { get; set; }
+    private IQueryable<Movie> FilteredMovies =>
+        context.Movie.Where(m => m.Title!.Contains(TitleFilter ?? string.Empty));
+
+    PaginationState pagination = new PaginationState { ItemsPerPage = 3 };
 
     protected override void OnInitialized()
     {
