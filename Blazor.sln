@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Movies", "Movies\Movies.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Academy", "Academy\Academy.csproj", "{310C3055-DF54-4A84-8633-DBB4FB47AF97}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorAcademy", "BlazorAcademy\BlazorAcademy.csproj", "{AED5B189-4621-4A38-A59C-412BF88C62BA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{310C3055-DF54-4A84-8633-DBB4FB47AF97}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{310C3055-DF54-4A84-8633-DBB4FB47AF97}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{310C3055-DF54-4A84-8633-DBB4FB47AF97}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AED5B189-4621-4A38-A59C-412BF88C62BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AED5B189-4621-4A38-A59C-412BF88C62BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AED5B189-4621-4A38-A59C-412BF88C62BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AED5B189-4621-4A38-A59C-412BF88C62BA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
