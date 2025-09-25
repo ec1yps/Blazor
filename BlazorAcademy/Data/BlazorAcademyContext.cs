@@ -17,5 +17,6 @@ namespace BlazorAcademy.Data
         public DbSet<BlazorAcademy.Models.Direction> Directions { get; set; } = default!;
         public DbSet<BlazorAcademy.Models.Group> Groups { get; set; } = default!;
         public DbSet<BlazorAcademy.Models.Student> Students { get; set; } = default!;
+        public DbSet<BlazorAcademy.Models.Teacher> Teachers { get; set; } = default!;
     }
 }
